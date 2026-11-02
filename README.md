@@ -9,7 +9,7 @@ clinical-agent-redline-sim/
 ```
 
 ## README.md
-````markdown
+```markdown
 <div align="center">
 
 # 🤖 Clinical Agent Redline Sim
@@ -201,7 +201,7 @@ Only use systems you own or have **written authorization** to test, in an isolat
 MIT. Use only on systems you own or are explicitly authorized to test.
 
 <div align="center"><sub>Built for defenders. Simulate first, deploy second.</sub></div>
-````
+```
 
 ## docs/clinical-redline-flow.svg
 ```xml

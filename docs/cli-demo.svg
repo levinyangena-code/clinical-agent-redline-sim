@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 270" width="900" height="270" font-family="ui-monospace, Menlo, Consolas, monospace" role="img" aria-labelledby="cliT">
+  <title id="cliT">Animated terminal showing python -m clinical_redline run-all --seed 7</title>
+
+  <rect width="900" height="270" rx="12" fill="#0d1117" stroke="#21262d"/>
+  <rect width="900" height="34" rx="12" fill="#161b22"/>
+  <rect y="22" width="900" height="12" fill="#161b22"/>
+  <circle cx="22" cy="17" r="6" fill="#ff5f56"/>
+  <circle cx="42" cy="17" r="6" fill="#ffbd2e"/>
+  <circle cx="62" cy="17" r="6" fill="#27c93f"/>
+  <text x="450" y="21" text-anchor="middle" fill="#8b949e" font-size="11" font-family="ui-monospace, monospace">clinical_redline — sandbox</text>
+
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13">
+    <text x="24" y="68" fill="#3fb950" opacity="0">$ <tspan fill="#e6edf3">python -m clinical_redline run-all --seed 7</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.0556;.92;1" dur="9s" repeatCount="indefinite"/>
+    </text>
+    <text x="24" y="92" fill="#8b949e" opacity="0">wrote out/metrics.json
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1111;.92;1" dur="9s" repeatCount="indefinite"/>
+    </text>
+    <text x="24" y="116" fill="#8b949e" opacity="0">exfil_attempt_rate: <tspan fill="#f85149">0.5</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.1667;.92;1" dur="9s" repeatCount="indefinite"/>
+    </text>
+    <text x="24" y="140" fill="#8b949e" opacity="0">guardrail_block_rate: <tspan fill="#3fb950">1.0</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.2222;.92;1" dur="9s" repeatCount="indefinite"/>
+    </text>
+    <text x="24" y="164" fill="#8b949e" opacity="0">unsafe_recommendation_rate: <tspan fill="#d29922">0.75</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.2778;.92;1" dur="9s" repeatCount="indefinite"/>
+    </text>
+    <text x="24" y="188" fill="#8b949e" opacity="0">retrieval_poison_success_rate: <tspan fill="#d29922">0.75</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.3333;.92;1" dur="9s" repeatCount="indefinite"/>
+    </text>
+    <text x="24" y="212" fill="#8b949e" opacity="0">conflict_detection_rate: <tspan fill="#3fb950">1.0</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.3889;.92;1" dur="9s" repeatCount="indefinite"/>
+    </text>
+    <text x="24" y="236" fill="#3fb950" opacity="0">$
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.4444;.92;1" dur="9s" repeatCount="indefinite"/>
+    </text>
+    <rect x="40" y="226" width="8" height="14" fill="#e6edf3" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;1;0;0;1;1;0;0" keyTimes="0;.45;.47;.51;.53;.55;.57;.61;.63;1" dur="9s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg>

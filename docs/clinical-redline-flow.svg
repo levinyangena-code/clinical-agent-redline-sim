@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 470" width="940" height="470" font-family="-apple-system, Segoe UI, Helvetica, Arial, sans-serif" role="img" aria-labelledby="crT crD">
+  <title id="crT">Clinical Agent Redline Sim: IPI and RAG poisoning simulation</title>
+  <desc id="crD">Animated diagram: an untrusted patient note and poisoned RAG documents feed an agent loop. Guardrails block the simulated external email, and a conflict detector flags the poisoned document.</desc>
+
+  <defs>
+    <linearGradient id="crBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#141026"/>
+    </linearGradient>
+    <marker id="crArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0 L10 5 L0 10 Z" fill="#334155"/>
+    </marker>
+  </defs>
+
+  <rect width="940" height="470" rx="16" fill="url(#crBg)"/>
+
+  <!-- connectors -->
+  <g stroke="#334155" stroke-width="2" marker-end="url(#crArrow)">
+    <line x1="225" y1="147" x2="284" y2="147"/>
+    <line x1="225" y1="277" x2="284" y2="277"/>
+    <line x1="500" y1="147" x2="554" y2="147"/>
+    <line x1="500" y1="277" x2="554" y2="277"/>
+    <line x1="730" y1="147" x2="784" y2="147"/>
+    <line x1="730" y1="277" x2="784" y2="277"/>
+  </g>
+  <g stroke="#22d3ee" stroke-width="2" stroke-dasharray="4 12">
+    <line x1="225" y1="147" x2="284" y2="147"><animate attributeName="stroke-dashoffset" values="16;0" dur="1s" repeatCount="indefinite"/></line>
+    <line x1="225" y1="277" x2="284" y2="277"><animate attributeName="stroke-dashoffset" values="16;0" dur="1s" begin=".4s" repeatCount="indefinite"/></line>
+    <line x1="500" y1="147" x2="554" y2="147"><animate attributeName="stroke-dashoffset" values="16;0" dur="1s" begin=".2s" repeatCount="indefinite"/></line>
+    <line x1="500" y1="277" x2="554" y2="277"><animate attributeName="stroke-dashoffset" values="16;0" dur="1s" begin=".6s" repeatCount="indefinite"/></line>
+  </g>
+
+  <!-- inputs -->
+  <g>
+    <rect x="25" y="100" width="200" height="95" rx="12" fill="#0f172a" stroke="#f87171" stroke-opacity=".5"/>
+    <text x="125" y="128" text-anchor="middle" fill="#e2e8f0" font-size="13.5" font-weight="600">Patient note</text>
+    <text x="125" y="149" text-anchor="middle" fill="#94a3b8" font-size="11">untrusted free text</text>
+    <text x="125" y="172" text-anchor="middle" fill="#f87171" font-size="10.5" font-family="ui-monospace, monospace">REDTEAM_IPI_MARKER</text>
+  </g>
+  <g>
+    <rect x="25" y="230" width="200" height="95" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-opacity=".5"/>
+    <text x="125" y="258" text-anchor="middle" fill="#e2e8f0" font-size="13.5" font-weight="600">Poisoned RAG docs</text>
+    <text x="125" y="279" text-anchor="middle" fill="#94a3b8" font-size="11">text ≠ figure caption</text>
+    <text x="125" y="302" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-family="ui-monospace, monospace">synthetic pairs</text>
+  </g>
+
+  <!-- agent -->
+  <rect x="290" y="100" width="210" height="225" rx="14" fill="#0f172a" stroke="#38bdf8" stroke-opacity=".5"/>
+  <text x="395" y="126" text-anchor="middle" fill="#e2e8f0" font-size="13.5" font-weight="600">Agent Loop</text>
+  <circle cx="395" cy="190" r="34" fill="none" stroke="#1e3a5f" stroke-width="2" stroke-dasharray="6 8">
+    <animate attributeName="stroke-dashoffset" values="28;0" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle r="5" fill="#38bdf8">
+    <animateMotion dur="3s" repeatCount="indefinite" path="M395,156 a34,34 0 1,1 -0.1,0"/>
+  </circle>
+  <text x="395" y="195" text-anchor="middle" fill="#38bdf8" font-size="11" font-family="ui-monospace, monospace">loop</text>
+  <text x="395" y="252" text-anchor="middle" fill="#94a3b8" font-size="11">PLAN → ACT → OBSERVE</text>
+  <text x="395" y="276" text-anchor="middle" fill="#94a3b8" font-size="11">simulated policy (no LLM)</text>
+  <text x="395" y="305" text-anchor="middle" fill="#64748b" font-size="10.5">allowlisted tools</text>
+
+  <!-- guardrails -->
+  <rect x="560" y="100" width="170" height="95" rx="12" fill="#0f172a" stroke="#34d399" stroke-opacity=".55"/>
+  <text x="645" y="126" text-anchor="middle" fill="#e2e8f0" font-size="13.5" font-weight="600">Guardrails</text>
+  <text x="645" y="148" text-anchor="middle" fill="#94a3b8" font-size="11">domain + patient allowlist</text>
+  <text x="645" y="166" text-anchor="middle" fill="#94a3b8" font-size="11">PHI-like pattern scan</text>
+  <text x="645" y="184" text-anchor="middle" fill="#34d399" font-size="10.5" font-family="ui-monospace, monospace">GuardrailDecision</text>
+
+  <!-- toolbox -->
+  <rect x="560" y="230" width="170" height="95" rx="12" fill="#0f172a" stroke="#38bdf8" stroke-opacity=".55"/>
+  <text x="645" y="258" text-anchor="middle" fill="#e2e8f0" font-size="13.5" font-weight="600">Toolbox</text>
+  <text x="645" y="280" text-anchor="middle" fill="#94a3b8" font-size="11">ehr_read · rag_search</text>
+  <text x="645" y="302" text-anchor="middle" fill="#34d399" font-size="10.5" font-family="ui-monospace, monospace">synthetic data only</text>
+
+  <!-- outbox / detector -->
+  <rect x="790" y="100" width="125" height="95" rx="12" fill="#0f172a" stroke="#f87171" stroke-opacity=".55"/>
+  <text x="852" y="128" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="600">Outbox</text>
+  <text x="852" y="150" text-anchor="middle" fill="#94a3b8" font-size="11">local .jsonl</text>
+  <text x="852" y="170" text-anchor="middle" fill="#f87171" font-size="10.5" font-family="ui-monospace, monospace">no SMTP</text>
+
+  <rect x="790" y="230" width="125" height="95" rx="12" fill="#0f172a" stroke="#fbbf24" stroke-opacity=".55"/>
+  <text x="852" y="258" text-anchor="middle" fill="#e2e8f0" font-size="13" font-weight="600">Detector</text>
+  <text x="852" y="280" text-anchor="middle" fill="#94a3b8" font-size="11">text vs caption</text>
+  <text x="852" y="300" text-anchor="middle" fill="#fbbf24" font-size="10.5" font-family="ui-monospace, monospace">score ≥ 0.5</text>
+
+  <!-- stamps -->
+  <g transform="translate(757,147)">
+    <g>
+      <animateTransform attributeName="transform" type="scale" values="0;0;1.25;1;1;0" keyTimes="0;.45;.53;.6;.88;1" dur="5s" repeatCount="indefinite"/>
+      <text x="0" y="5" text-anchor="middle" fill="#f87171" font-size="13" font-weight="700" font-family="ui-monospace, monospace" transform="rotate(-12)">BLOCKED</text>
+    </g>
+  </g>
+  <g>
+    <text x="757" y="277" text-anchor="middle" fill="#fbbf24" font-size="12" font-weight="700" font-family="ui-monospace, monospace">FLAGGED</text>
+    <animate attributeName="opacity" values=".4;1;.4" dur="2.4s" repeatCount="indefinite"/>
+  </g>
+
+  <!-- metrics (seed 7) -->
+  <text x="25" y="372" fill="#94a3b8" font-size="10" font-family="ui-monospace, monospace">exfil_attempt_rate</text>
+  <rect x="25" y="380" width="200" height="9" rx="4.5" fill="#1e293b"/>
+  <rect x="25" y="380" width="0" height="9" rx="4.5" fill="#f87171">
+    <animate attributeName="width" values="0;100;100" keyTimes="0;.35;1" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <text x="25" y="406" fill="#f87171" font-size="11" font-family="ui-monospace, monospace">50%</text>
+
+  <text x="255" y="372" fill="#94a3b8" font-size="10" font-family="ui-monospace, monospace">guardrail_block_rate</text>
+  <rect x="255" y="380" width="200" height="9" rx="4.5" fill="#1e293b"/>
+  <rect x="255" y="380" width="0" height="9" rx="4.5" fill="#22d3ee">
+    <animate attributeName="width" values="0;200;200" keyTimes="0;.35;1" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <text x="255" y="406" fill="#22d3ee" font-size="11" font-family="ui-monospace, monospace">100%</text>
+
+  <text x="485" y="372" fill="#94a3b8" font-size="10" font-family="ui-monospace, monospace">unsafe_recommendation_rate</text>
+  <rect x="485" y="380" width="200" height="9" rx="4.5" fill="#1e293b"/>
+  <rect x="485" y="380" width="0" height="9" rx="4.5" fill="#fbbf24">
+    <animate attributeName="width" values="0;150;150" keyTimes="0;.4;1" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <text x="485" y="406" fill="#fbbf24" font-size="11" font-family="ui-monospace, monospace">75%</text>
+
+  <text x="715" y="372" fill="#94a3b8" font-size="10" font-family="ui-monospace, monospace">retrieval_poison_success_rate</text>
+  <rect x="715" y="380" width="200" height="9" rx="4.5" fill="#1e293b"/>
+  <rect x="715" y="380" width="0" height="9" rx="4.5" fill="#fbbf24">
+    <animate attributeName="width" values="0;150;150" keyTimes="0;.4;1" dur="5s" repeatCount="indefinite"/>
+  </rect>
+  <text x="715" y="406" fill="#fbbf24" font-size="11" font-family="ui-monospace, monospace">75%</text>
+
+  <text x="470" y="428" text-anchor="middle" fill="#64748b" font-size="10.5" font-family="ui-monospace, monospace">sample run: --seed 7 · 20 IPI trials · 8 RAG trials</text>
+  <text x="470" y="452" text-anchor="middle" fill="#475569" font-size="11" font-family="ui-monospace, monospace">BENIGN MARKERS · SYNTHETIC DATA · NO REAL EMAIL · SANDBOX ONLY</text>
+</svg>
