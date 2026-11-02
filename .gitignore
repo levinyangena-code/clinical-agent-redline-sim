@@ -1,0 +1,8 @@
+# Python bytecode and local environment
+__pycache__/
+.pytest_cache/
+.venv/
+
+# Test artifacts and generated outputs
+out/
+outbox.jsonl
