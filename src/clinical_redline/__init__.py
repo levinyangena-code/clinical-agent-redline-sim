@@ -1,2 +1,2 @@
-"""Clinical Redline package."""
+"""Clinical redline package."""
 from __future__ import annotations
