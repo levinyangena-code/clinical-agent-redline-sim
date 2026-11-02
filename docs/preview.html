@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clinical Agent Redline Sim preview</title>
+    <style>
+      :root {
+        --bg: #0b1020;
+        --panel: #121a2b;
+        --text: #e2e8f0;
+        --muted: #94a3b8;
+        --accent: #38bdf8;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        font-family: -apple-system, Segoe UI, Helvetica, Arial, sans-serif;
+        color: var(--text);
+      }
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 32px 20px 48px;
+      }
+      h1 {
+        margin: 0 0 8px;
+        font-size: 2rem;
+      }
+      p {
+        color: var(--muted);
+        margin: 0 0 24px;
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid rgba(148, 163, 184, 0.2);
+        border-radius: 16px;
+        padding: 18px;
+        margin-bottom: 28px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.28);
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        background: #0b1120;
+      }
+      .label {
+        margin: 0 0 12px;
+        color: var(--accent);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        font-size: 0.72rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>Clinical Agent Redline Sim</h1>
+      <p>Open this page in a browser to view the animated SVG assets. GitHub README rendering does not display SVG animation reliably.</p>
+
+      <div class="panel">
+        <div class="label">clinical-redline-flow.svg</div>
+        <img src="./clinical-redline-flow.svg" alt="Clinical Redline flow diagram" />
+      </div>
+
+      <div class="panel">
+        <div class="label">cli-demo.svg</div>
+        <img src="./cli-demo.svg" alt="CLI demo animation" />
+      </div>
+    </div>
+  </body>
+</html>
